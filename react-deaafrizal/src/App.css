@@ -5,6 +5,27 @@
   text-align: center;
 }
 
+.navbar ul a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin: 0 2rem;
+  font-size: 1.5rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.navbar ul a:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
