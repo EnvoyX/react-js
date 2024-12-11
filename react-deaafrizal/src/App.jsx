@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRef } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import MyButton from "./components/myButton";
@@ -23,6 +24,8 @@ const App = () => {
       </div>
     );
   };
+
+  // Hooks
 
   // useState
   // Kiri ==> Getter (Initial Value, Mutable Value)
@@ -70,6 +73,18 @@ const App = () => {
     alert("Girlfriend Herta quantity changed!");
   }, [getGirlfriendValue]);
 
+  // useRef
+  const linkRef = useRef(null);
+
+  const goTo = (ref) => {
+    console.log(ref);
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div>
@@ -86,6 +101,7 @@ const App = () => {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <button onClick={() => goTo(linkRef.current)}>Coba useRef</button>
       <p>Halo Cuyyy</p>
       <h5>Girlfriend name: {getGirlfriendName}</h5>
       <p>Girlfriends: {getGirlfriendValue}</p>
@@ -105,6 +121,53 @@ const App = () => {
           count is {count}
         </button>
       </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        earum, atque ratione laboriosam ipsum ullam neque nisi rem laudantium
+        quis aut eos et nemo sit id? Beatae quis corporis sit explicabo minus!
+        Eos perferendis nam optio beatae. Voluptate placeat fugiat mollitia
+        earum iusto natus recusandae dolorum quasi sit accusamus, magni et iure
+        architecto reiciendis unde illo repellat, possimus alias voluptas,
+        facere sequi? Nisi, dolorem cum doloremque cumque voluptates accusantium
+        possimus atque necessitatibus est odit eveniet ullam suscipit, vero
+        distinctio maiores ipsam. Molestias illo dicta, maxime, amet quod
+        reiciendis molestiae consequuntur sapiente facere sunt neque nihil
+        numquam quis aut ab repellendus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        earum, atque ratione laboriosam ipsum ullam neque nisi rem laudantium
+        quis aut eos et nemo sit id? Beatae quis corporis sit explicabo minus!
+        Eos perferendis nam optio beatae. Voluptate placeat fugiat mollitia
+        earum iusto natus recusandae dolorum quasi sit accusamus, magni et iure
+        architecto reiciendis unde illo repellat, possimus alias voluptas,
+        facere sequi? Nisi, dolorem cum doloremque cumque voluptates accusantium
+        possimus atque necessitatibus est odit eveniet ullam suscipit, vero
+        distinctio maiores ipsam. Molestias illo dicta, maxime, amet quod
+        reiciendis molestiae consequuntur sapiente facere sunt neque nihil
+        numquam quis aut ab repellendus.
+      </p>
+      <a
+        href="https://react.dev"
+        ref={linkRef}
+        target="_blank"
+        className="read-the-docs"
+      >
+        Click on the Vite and React logos to learn more or click here
+      </a>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        earum, atque ratione laboriosam ipsum ullam neque nisi rem laudantium
+        quis aut eos et nemo sit id? Beatae quis corporis sit explicabo minus!
+        Eos perferendis nam optio beatae. Voluptate placeat fugiat mollitia
+        earum iusto natus recusandae dolorum quasi sit accusamus, magni et iure
+        architecto reiciendis unde illo repellat, possimus alias voluptas,
+        facere sequi? Nisi, dolorem cum doloremque cumque voluptates accusantium
+        possimus atque necessitatibus est odit eveniet ullam suscipit, vero
+        distinctio maiores ipsam. Molestias illo dicta, maxime, amet quod
+        reiciendis molestiae consequuntur sapiente facere sunt neque nihil
+        numquam quis aut ab repellendus.
+      </p>
       <Footer paragraph={paragraph}></Footer>
     </>
   );
