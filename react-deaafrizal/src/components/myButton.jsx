@@ -1,7 +1,9 @@
-const MyButton = () => {
+/* eslint-disable react/prop-types */
+const MyButton = ({ clicked }) => {
   return (
     <div>
-      <button>Click Me Bro</button>
+      {/* Binding Data in React */}
+      <button onClick={() => clicked()}>Click Me Bro</button>
     </div>
   );
 };

@@ -7,12 +7,27 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 const App = () => {
+  const navHeading = "This is Navigation Bar";
+  const navText = "Social Media";
   const [count, setCount] = useState(0);
+
+  const clicked = () => {
+    return alert("Button Clicked!");
+  };
+
+  const paragraph = () => {
+    return (
+      <div>
+        <i>Mantap Bang Ini Paragraph</i>
+        <marquee>Jos Gandos</marquee>
+      </div>
+    );
+  };
 
   return (
     <>
       <div>
-        <Navbar></Navbar>
+        <Navbar navText={navText} navHeading={navHeading}></Navbar>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -22,13 +37,13 @@ const App = () => {
       </div>
       <h1>Vite + React</h1>
       <p>Halo Cuyyy</p>
-      <MyButton></MyButton>
+      <MyButton clicked={clicked}></MyButton>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
       </div>
-      <Footer></Footer>
+      <Footer paragraph={paragraph}></Footer>
     </>
   );
 };
