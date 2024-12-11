@@ -24,10 +24,20 @@ const App = () => {
     );
   };
 
+  // useState
+  const [getNavbarValue, setNavbarValue] = useState("");
+  const handleNavbarValue = () => {
+    setNavbarValue("My Contact");
+  };
+
   return (
     <>
       <div>
-        <Navbar navText={navText} navHeading={navHeading}></Navbar>
+        <Navbar
+          navText={navText}
+          navHeading={navHeading}
+          navValue={getNavbarValue}
+        ></Navbar>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -38,6 +48,7 @@ const App = () => {
       <h1>Vite + React</h1>
       <p>Halo Cuyyy</p>
       <MyButton clicked={clicked}></MyButton>
+      <button onClick={() => handleNavbarValue()}>Ubah Navigasi</button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

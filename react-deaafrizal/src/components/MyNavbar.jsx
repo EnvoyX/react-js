@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export const Navbar = ({ navText, navHeading }) => {
+export const Navbar = ({ navText, navHeading, navValue }) => {
   return (
     <div className="navbar">
       <ul>
@@ -15,6 +15,9 @@ export const Navbar = ({ navText, navHeading }) => {
         </li>
         <li>
           <a href="">{navText}</a>
+        </li>
+        <li>
+          <a href="">getNavbarValue: {!navValue ? "Blog" : "Projects"}</a>
         </li>
       </ul>
     </div>
