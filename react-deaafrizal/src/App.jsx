@@ -1,18 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import MyButton from "./components/myButton";
-import { Navbar } from "./components/MyNavbar";
-import Footer from "./components/Footer";
-import "./App.css";
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import MyButton from './components/myButton';
+import { Navbar } from './components/MyNavbar';
+import Footer from './components/Footer';
+import './App.css';
 
 const App = () => {
-  const navHeading = "This is Navigation Bar";
-  const navText = "Social Media";
+  const navHeading = 'This is Navigation Bar';
+  const navText = 'Social Media';
   const [count, setCount] = useState(0);
 
   const clicked = () => {
-    return alert("Button Clicked!");
+    return alert('Button Clicked!');
   };
 
   const paragraph = () => {
@@ -25,9 +25,9 @@ const App = () => {
   };
 
   // useState
-  const [getNavbarValue, setNavbarValue] = useState("");
+  const [getNavbarValue, setNavbarValue] = useState('');
   const handleNavbarValue = () => {
-    setNavbarValue("My Contact");
+    setNavbarValue('My Contact');
   };
 
   return (
