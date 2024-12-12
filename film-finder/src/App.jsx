@@ -1,15 +1,33 @@
-import { useEffect, useState } from 'react';
-import { getMovieList, searchMovie } from './api';
-import './App.css';
+import { useEffect, useState } from "react";
+import { getMovieList, searchMovie } from "./api";
+import "./App.css";
 
 // Function Expression
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [isNotif, setIsNotif] = useState(false);
 
   useEffect(() => {
     getMovieList().then((result) => setPopularMovies(result));
   }, []);
+
+  const notif = () => {
+    // True
+    setIsNotif(!isNotif);
+    setTimeout(() => {
+      // True
+      // setIsNotif ini tidak mengambil
+      // nilai state isNotif yang terbaru/recent
+      // tetapi diambil dari nilai defaultnya
+      // maka akan tetap menghasilkan True
+      // setIsNotif(!isNotif);
+
+      // Menggunakan callback bawaan untuk
+      // mengambil nilai state yang terbaru/recent
+      setIsNotif((state) => !state);
+    }, 2000);
+  };
 
   const PopularMovie = () => {
     return popularMovies.map((movie, i) => {
@@ -41,6 +59,10 @@ const App = () => {
   return (
     <>
       <div className="App">
+        {isNotif && <h3>THANK YOUU!😍</h3>}
+        <button onClick={() => notif()} className="btn">
+          {isNotif ? "Notification OFF" : "ON NOTIFACTION?"}
+        </button>
         <header className="App-header">
           <h1>ENVOY MOVIE MANIA</h1>
           <input
