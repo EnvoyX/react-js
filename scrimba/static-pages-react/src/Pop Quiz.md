@@ -32,7 +32,7 @@ as many children elements as you want.
    _Imperative_ means we need to give specific step-by-step instructions on how to
    accomplish a task.
    _Declarative_ means we can write our code to simply "describe" _what_ should show up
-   on the page and allow the rool (React, e.g.) to handle the details on _how_ to
+   on the page and allow the tool (React, e.g.) to handle the details on _how_ to
    put those things on the page.
 
 5. What does it mean for something to be "composable"?
