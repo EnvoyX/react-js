@@ -4,6 +4,7 @@ import fluffykins from "./images/fluffykins.png";
 import felix from "./images/felix.png";
 import pumpkin from "./images/pumpkin.png";
 import { Contact } from "./components/Contact";
+import { Joke } from "./components/Joke";
 import "./App.css";
 
 /**
@@ -41,6 +42,49 @@ function App() {
         email={"pumpkin@scrimba.com"}
         imgCat={pumpkin}
       ></Contact>
+      <main>
+        <Joke
+          setup={"I got my daughter a fridge for her birthday."}
+          punchline={"I can't wait to see her face light up when she opens it."}
+          isPun={true}
+          comments={[
+            { author: "123", text: "some comments", title: "some title" },
+            { author: "679", text: "some comments", title: "some title" },
+          ]}
+        />
+        <Joke
+          setup={"How did the hacker escape the police?"}
+          punchline={"He just ransomware!"}
+          isPun={true}
+          comments={[
+            { author: "123", text: "some comments", title: "some title" },
+            { author: "679", text: "some comments", title: "some title" },
+          ]}
+        />
+        <Joke
+          setup={"Why don't pirates travel on mountain roads?"}
+          punchline={"Scurvy."}
+          isPun={true}
+          comments={[
+            { author: "123", text: "some comments", title: "some title" },
+            { author: "679", text: "some comments", title: "some title" },
+          ]}
+        />
+        <Joke
+          setup={"Why do bees stay in the hive in the winter?"}
+          punchline={"Swarm."}
+          isPun={true}
+          comments={[
+            { author: "123", text: "some comments", title: "some title" },
+            { author: "679", text: "some comments", title: "some title" },
+          ]}
+        />
+        <Joke
+          setup={"What's the best thing about Switzerland?"}
+          punchline={"I don't know, but the flag is a big plus!"}
+          isPun={false}
+        />
+      </main>
     </div>
   );
 }
