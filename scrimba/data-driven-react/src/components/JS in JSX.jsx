@@ -1,4 +1,4 @@
-export const Test = () => {
+export const SomeDate = () => {
   const firstName = `Joe`;
   const lastName = "Schmoe";
   const hours = new Date().getHours();
@@ -13,18 +13,21 @@ export const Test = () => {
   } else {
     timeOfDay = "night";
   }
-  <>
-    <h1>
-      {/* JS Inside JSX */}
-      Hello {firstName} {lastName}, welcome to React!
-    </h1>
-    <h2>Good {timeOfDay}</h2>
-    <h2>
-      It is currently {new Date().getHours()}:{new Date().getMinutes()} o`clock
-    </h2>
-    <h3>
-      Today&apos;s date is {new Date().getMonth() + 1}/{new Date().getDate()}/
-      {new Date().getFullYear()}
-    </h3>
-  </>;
+  return (
+    <>
+      <h1>
+        {/* JS Inside JSX */}
+        Hello {firstName} {lastName}, welcome to React!
+      </h1>
+      <h2>Good {timeOfDay}</h2>
+      <h2>
+        It is currently {new Date().getHours()}:{new Date().getMinutes()}{" "}
+        o`clock
+      </h2>
+      <h3>
+        Today&apos;s date is {new Date().getMonth() + 1}/{new Date().getDate()}/
+        {new Date().getFullYear()}
+      </h3>
+    </>
+  );
 };

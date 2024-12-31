@@ -1,10 +1,12 @@
-import { Test } from "./components/JS in JSX";
+/* eslint-disable react/jsx-key */
 import whiskerson from "./images/mr-whiskerson.png";
 import fluffykins from "./images/fluffykins.png";
 import felix from "./images/felix.png";
 import pumpkin from "./images/pumpkin.png";
 import { Contact } from "./components/Contact";
 import { Joke } from "./components/Joke";
+import jokesData from "./jokesData";
+// import { SomeDate } from "./components/JS in JSX";
 import "./App.css";
 
 /**
@@ -16,6 +18,12 @@ import "./App.css";
  */
 
 function App() {
+  const ninjaTurtles = ["Donatello", "Michaelangelo", "Rafael", "Leonardo"];
+  const jokeElements = jokesData.map((joke, i) => {
+    return (
+      <Joke key={i} setup={joke.question} punchline={joke.punchline}></Joke>
+    );
+  });
   return (
     <div className="contacts">
       <Contact
@@ -43,7 +51,7 @@ function App() {
         imgCat={pumpkin}
       ></Contact>
       <main>
-        <Joke
+        {/* <Joke
           setup={"I got my daughter a fridge for her birthday."}
           punchline={"I can't wait to see her face light up when she opens it."}
           isPun={true}
@@ -83,8 +91,15 @@ function App() {
           setup={"What's the best thing about Switzerland?"}
           punchline={"I don't know, but the flag is a big plus!"}
           isPun={false}
-        />
+        /> */}
+        {jokeElements}
       </main>
+      <article>
+        {ninjaTurtles.map((ninja, i) => {
+          return <h2 key={i}>{ninja}</h2>;
+        })}
+      </article>
+      {/* <SomeDate></SomeDate> */}
     </div>
   );
 }
